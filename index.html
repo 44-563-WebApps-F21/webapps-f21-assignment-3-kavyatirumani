@@ -67,6 +67,29 @@
                 <td>$2.00</td>
             </tr>
         </table>
+       <hr>
+       <h2> Fibonacci numbers </h2>
+       <blockquote> 
+         <p>
+           In mathematics, the Fibonacci numbers, commonly denoted Fn, form a sequence, called the Fibonacci sequence, 
+          such that each number is the sum of the two preceding ones, starting from 0 and 1 
+        </p>
+      </blockquote>
+      <pre>
+        pair<int, int> fib (int n) {
+          if (n == 0)
+              return {0, 1};
+      
+          auto p = fib(n >> 1);
+          int c = p.first * (2 * p.second - p.first);
+          int d = p.first * p.first + p.second * p.second;
+          if (n & 1)
+              return {d, c + d};
+          else
+              return {c, d};
+      }
+      </pre>
+
         </body>
   </html>
 
